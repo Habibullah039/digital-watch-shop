@@ -1,0 +1,30 @@
+[
+    {
+        "_id": 1 ,
+        "name" : "Analog Numeral" ,
+        "img" : "images/analog_numeral.jpg" ,
+        "price" : "$1000"
+    } 
+    ,
+
+    {
+        "_id": 2 ,
+        "name" : "Black Numeral" ,
+        "img" : "images/BlackNumeral.jpg" ,
+        "price" : "$2000"
+    }
+    ,
+    {
+        "_id": 3 ,
+        "name" : "Golden Automatic" ,
+        "img" : "images/goldenAutomatic.jpg" ,
+        "price" : "$1500"
+    }
+    ,
+    {
+        "_id": 4 ,
+        "name" : "Golden Classical" ,
+        "img" : "images/goldenClassical.jpg" ,
+        "price" : "$3000"
+    }
+]

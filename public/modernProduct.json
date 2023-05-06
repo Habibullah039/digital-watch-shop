@@ -1,0 +1,30 @@
+[
+    {
+        "_id": 1 ,
+        "name" : "Platinum Numeral" ,
+        "img" : "images2/PlatinumNumeral.jpg" ,
+        "price" : "$3000"
+    } 
+    ,
+
+    {
+        "_id": 2 ,
+        "name" : "Platinum Classic" ,
+        "img" : "images2/PlatinumClassic.jpg" ,
+        "price" : "$5000"
+    }
+    ,
+    {
+        "_id": 3 ,
+        "name" : "Golden Automatic" ,
+        "img" : "images2/GoldenAutomatic.jpg" ,
+        "price" : "$2500"
+    }
+    ,
+    {
+        "_id": 4 ,
+        "name" : "Analog Automatic" ,
+        "img" : "images2/AnalogAutomatic.jpg" ,
+        "price" : "$1000"
+    }
+]
