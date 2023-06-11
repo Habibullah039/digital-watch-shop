@@ -12,7 +12,7 @@ const Store = () => {
     const [modernProducts, setModernProducts] = useState([]);
 
     useEffect(() => {
-        fetch('classicProduct.json')
+        fetch('http://localhost:5000/classicWatch')
             .then(res => res.json())
             .then(data => setClassicProducts(data))
     }, [])

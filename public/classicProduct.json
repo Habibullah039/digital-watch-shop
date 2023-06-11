@@ -1,30 +1,34 @@
 [
     {
-        "_id": 1 ,
+    
         "name" : "Analog Numeral" ,
-        "img" : "images/analog_numeral.jpg" ,
+        "img" : "https://i.ibb.co/rF4g3jw/analog-numeral.webp" ,
+        "discription" : "This is a nice watch and water prove best new collection " ,
         "price" : "$1000"
     } 
     ,
 
     {
-        "_id": 2 ,
+        
         "name" : "Black Numeral" ,
-        "img" : "images/BlackNumeral.jpg" ,
+        "img" : "https://i.ibb.co/MhWjQBZ/Black-Numeral.webp" ,
+        "discription" : "This is a nice watch and water prove best new collection " ,
         "price" : "$2000"
     }
     ,
     {
-        "_id": 3 ,
+        
         "name" : "Golden Automatic" ,
-        "img" : "images/goldenAutomatic.jpg" ,
+        "img" : "https://i.ibb.co/VTFSKCf/golden-Automatic.webp" ,
+        "discription" : "This is a nice watch and water prove best new collection " ,
         "price" : "$1500"
     }
     ,
     {
-        "_id": 4 ,
+        
         "name" : "Golden Classical" ,
-        "img" : "images/goldenClassical.jpg" ,
+        "img" : "https://i.ibb.co/hd7XrsD/golden-Classical.webp" ,
+        "discription" : "This is a nice watch and water prove best new collection " ,
         "price" : "$3000"
     }
 ]
