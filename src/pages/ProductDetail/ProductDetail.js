@@ -1,4 +1,4 @@
-import { Link, useParams } from 'react-router-dom';
+import { Link , useParams } from 'react-router-dom';
 import useProductDetails from '../../hooks/useProductDetails';
 import { StarIcon } from '@heroicons/react/24/solid';
 import { useState } from 'react';
@@ -6,10 +6,40 @@ import { useState } from 'react';
 const ProductDetail = () => {
     const { productId } = useParams();
     const [product] = useProductDetails(productId);
+    const {_id , name , img , price} = product;
     const [count, setCount] = useState(1);
 
     const increaseCount = () => setCount(count + 1);
     const decreaseCount = () => setCount(count - 1);
+    
+
+    const handleOrder = () => {
+
+        const order = {
+            productId : _id ,
+            product: name ,
+            productImage : img ,
+            price : price ,
+            quantity : count
+
+        }
+
+        fetch('http://localhost:5000/order' , {
+            method:'POST' ,
+            headers: {
+                'content-type':'application/json' 
+            } ,
+
+            body :JSON.stringify(order)
+        })
+
+        .then(res => res.json())
+        .then(data => {
+            console.log(data) ;
+        
+        })
+        
+    }
 
     return (
         <div className='flex'>
@@ -31,19 +61,19 @@ const ProductDetail = () => {
                 <div className='flex font-serif font-bold'>
                     <p className='mr-4 text-2xl'>Size :</p>
                     <div>
-                        <input type="radio" name="radio-1" className="radio radio-warning"  />
+                        <input type="radio" name="radio" className="radio radio-warning"  />
                         <span className='text-2xl mx-2'>S</span>
                     </div>
                     <div>
-                        <input type="radio" name="radio-1" className="radio radio-warning" />
+                        <input type="radio" name="radio" className="radio radio-warning" />
                         <span className='text-2xl mx-2'>M</span>
                     </div>
                     <div>
-                        <input type="radio" name="radio-1" className="radio radio-warning" />
+                        <input type="radio" name="radio" className="radio radio-warning" />
                         <span className='text-2xl mx-2'>L</span>
                     </div>
                     <div>
-                        <input type="radio" name="radio-1" className="radio radio-warning" />
+                        <input type="radio" name="radio" className="radio radio-warning" />
                         <span className='text-2xl mx-2'>XL</span>
                     </div>
                 </div>
@@ -54,9 +84,11 @@ const ProductDetail = () => {
                     <button className='mr-4' onClick={increaseCount}>+</button>
                 </div>
 
+                
                 <Link to='/checkout'>
-                    <button className='text-lg font-serif font-bold bg-pink-800 text-white px-[30px] py-3 my-5'>ADD TO CART</button>
+                    <button onClick={handleOrder} className='text-lg font-serif font-bold bg-pink-800 text-white px-[30px] py-3 my-5'>ADD TO CART</button>
                 </Link>
+                
             </div>
 
         </div>
