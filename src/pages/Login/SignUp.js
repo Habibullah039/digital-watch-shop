@@ -1,60 +1,70 @@
-
 import React from 'react';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate} from 'react-router-dom';
 import auth from '../../firebase.init';
 
 
-const Login = () => {
+const SignUp = () => {
 
-    const { register, formState: { errors }, handleSubmit, } = useForm();
-    
+    const { register, formState: { errors }, handleSubmit } = useForm();
+
     const [
-        signInWithEmailAndPassword,
+        createUserWithEmailAndPassword,
         loading,
         error,
-    ] = useSignInWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth);
+
+    const [updateProfile, updating] = useUpdateProfile(auth);
+
 
     const navigate = useNavigate();
     const location = useLocation() ;
 
 
     let from = location.state?.from?.pathname || "/";
-    let signInError;
 
+      let signInError;
 
-    if (error) {
+      if (error) {
         
         signInError = <p className='text-[red]'>{error?.message}</p>
 
-    }
+      }
 
 
-    if (loading) {
+      if (loading || updating) {
     
 
         return <button class="btn loading"> Loading</button>
 
-    }
+      }
 
 
+    
 
 
-
+    
 
     const onSubmit = async (data) => {
 
-        const email =data.email ;
-        const password = data.password ;
-        const user ={email , password}
-        
-        await signInWithEmailAndPassword(email, password) ; 
-
         
 
+        
+        const email = data.email;
+        const password = data.password;
+        const name = data.name;
+        const number = data.phone; 
+        const user = { email, password ,number, name };
 
-        fetch(`http://localhost:5000/login`, {
+    
+        
+        await createUserWithEmailAndPassword(data.email , data.password) ;
+        await updateProfile({ displayName: name });
+        
+        
+
+        fetch('http://localhost:5000/signup', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -63,30 +73,91 @@ const Login = () => {
             body: JSON.stringify(user)
         })
 
-        .then(res => res.json())
-        .then(data => {
-            
-            console.log(data);
-            const token =data.accessToken ;
-            localStorage.setItem('token' , token) ;
-            navigate(from, { replace: true });
-            
-            
-        })
-                 
-    
+            .then(res => res.json())
+            .then(user => {
+                
+                alert('users added done');
+                navigate(from, { replace: true });
+
+            })
+
     }
 
-
     return (
-        <div className='flex h-screen justify-center items-center'>
+        <div className='flex  justify-center items-center'>
+            <div className="card w-96 my-5  bg-[#511849]">
 
-            <div className="card w-96 bg-[#511849]">
                 <div className="card-body">
-
-                    <h2 class=" text-center font-bold  font-serif text-3xl text-white">Please Login</h2>
+                    <h2 class=" text-center font-bold text-white  text-2xl">Sign Up</h2>
 
                     <form onSubmit={handleSubmit(onSubmit)}>
+                        <div className="form-control w-full max-w-xs">
+
+                            <label className="label">
+                                <span className="label-text text-white">Name</span>
+
+                            </label>
+
+                            <input
+
+                                type="text"
+                                placeholder="Enter your name"
+                                className="input input-bordered w-full max-w-xs"
+                                {...register("name", {
+
+                                    required: {
+                                        value: true,
+                                        message: 'Name is Required'
+                                    }
+                                })}
+                            />
+
+                            <label className="label">
+
+                                {errors.name?.type === "required" &&
+
+                                    <span className="label-text-alt text-[red] text-lg">
+                                        {errors.name.message}
+                                    </span>
+                                }
+
+                            </label>
+
+                        </div>
+
+                        <div className="form-control w-full max-w-xs">
+
+                            <label className="label">
+                                <span className="label-text text-white">Phone Number</span>
+
+                            </label>
+
+                            <input
+
+                                type="number"
+                                placeholder="Enter your number"
+                                className="input input-bordered w-full max-w-xs"
+                                {...register("phone", {
+
+                                    required: {
+                                        value: true,
+                                        message: 'Phone  Number is Required'
+                                    }
+                                })}
+                            />
+
+                            <label className="label">
+
+                                {errors.phone?.type === "required" &&
+
+                                    <span className="label-text-alt text-[red] text-lg">
+                                        {errors.phone.message}
+                                    </span>
+                                }
+
+                            </label>
+
+                        </div>
 
                         <div className="form-control w-full max-w-xs">
 
@@ -133,8 +204,7 @@ const Login = () => {
 
                         </div>
 
-
-
+                        
                         <div className="form-control w-full max-w-xs">
 
                             <label className="label">
@@ -181,20 +251,19 @@ const Login = () => {
                         </div>
 
                         {signInError}
+                        
+                        <input class="bg-[#C70039] mt-3 px-16 py-3 font-bold font-sans rounded block mx-auto text-lg text-white cursor-pointer" type="submit" value='Submit' />
 
-                        <input class="bg-[#C70039] mt-3 px-16 py-3 font-bold font-sans rounded block mx-auto text-lg text-white cursor-pointer" type="submit" value='Login' />
 
                     </form>
 
-                    <p className='text-white'><small>If you don't have any account ? <Link className='text-[blue] font-semibold' to='/sign-up'> Create a new account </Link> </small></p>
+                    <p className='text-white'><small>Already have an account ? <Link className='text-[blue] font-semibold' to='/login'> Please Login </Link> </small></p>
 
                 </div>
 
             </div>
-
-
         </div>
     );
 };
 
-export default Login;
+export default SignUp;

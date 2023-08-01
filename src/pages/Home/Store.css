@@ -1,0 +1,5 @@
+.tab.tab-active {
+    border-color: orange;
+    --tw-border-opacity: 1;
+    --tw-text-opacity: 1;
+}

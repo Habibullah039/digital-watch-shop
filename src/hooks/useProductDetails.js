@@ -1,19 +1,16 @@
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const useProductDetails = productId => {
-    const [product, setProduct] = useState({});
-    
 
+    const [product , setProduct] = useState({});
 
-    useEffect(() => {
+    useEffect(()=> {
         fetch(`http://localhost:5000/classicWatch/${productId}`)
-            .then(res => res.json())
-            .then(data => setProduct(data))
+        .then(res => res.json())
+        .then(data => setProduct(data) )
+    } , [productId])
 
-    }, [productId])
+    return [product]  ;
+};
 
-    return [product] ;
-}
-
-export default useProductDetails ;
+export default useProductDetails;

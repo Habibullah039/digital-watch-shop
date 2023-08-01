@@ -2,12 +2,12 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { StarIcon } from '@heroicons/react/24/solid';
 
-const ClassicWatch = ({ classicProduct }) => {
-    const { img, name, price, _id } = classicProduct;
+const SpecialWatch = ({ specialProduct }) => {
+    const { img, name, price, _id } = specialProduct;
     const navigate = useNavigate();
 
     const handleClick = id => {
-        navigate(`/product/${id}`)
+        navigate(`/specialProduct/${id}`)
     }
     return (
 
@@ -47,4 +47,4 @@ const ClassicWatch = ({ classicProduct }) => {
     );
 };
 
-export default ClassicWatch;
+export default SpecialWatch;

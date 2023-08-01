@@ -1,16 +1,17 @@
-import {  useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { StarIcon } from '@heroicons/react/24/solid';
 import { useState } from 'react';
-import useProductDetails from '../../hooks/useProductDetails';
 import auth from '../../firebase.init';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import useProductDetails3 from '../../hooks/useProductDetails3';
 
-const ProductDetail = () => {
+
+const ProductDetails3 = () => {
     const [user] = useAuthState(auth);
-    const { productId } = useParams();
-    const [product] = useProductDetails(productId);
+    const { specialProductId } = useParams();
+    const [service] = useProductDetails3(specialProductId);
     const navigate = useNavigate();
-    const { name, img, price } = product;
+    const { name, img, price , discription } = service;
 
 
     const [count, setCount] = useState(1);
@@ -32,7 +33,7 @@ const ProductDetail = () => {
         const email = user?.email
         const size = event.target.size.value;
         const order = {
-            productId: productId,
+            productId: specialProductId,
             email: email,
             product: name,
             productImage: img,
@@ -67,12 +68,12 @@ const ProductDetail = () => {
         <div className='flex'>
 
             <div className='bg-[#4E4E53] mt-[80px] mx-[60px] mb-[150px]'>
-                <img src={product.img} className='h-[450px] w-[320px] mb-[-130px]' alt={product.name} />
+                <img src={img} className='h-[450px] w-[320px] mb-[-130px]' alt={name} />
             </div>
 
             <div className='mt-[100px]'>
-                <h1 className='text-3xl font-serif font-bold mb-3'>{product.name}</h1>
-                <p className='font-serif text-md font-semibold'> {product.discription} </p>
+                <h1 className='text-3xl font-serif font-bold mb-3'>{name}</h1>
+                <p className='font-serif text-md font-semibold'> {discription} </p>
                 <div className='flex my-2'>
                     <StarIcon className="h-5 w-5 text-[#835a0e]" />
                     <StarIcon className="h-5 w-5 text-[#835a0e]" />
@@ -80,7 +81,7 @@ const ProductDetail = () => {
                     <StarIcon className="h-5 w-5 text-[#835a0e]" />
                     <StarIcon className="h-5 w-5 text-[#835a0e]" />
                 </div>
-                <p className='text-4xl font-serif  font-bold mb-3'> {product.price} </p>
+                <p className='text-4xl font-serif  font-bold mb-3'> {price} </p>
 
 
                 <div className='flex items-center text-2xl font-serif font-bold my-2'>
@@ -131,6 +132,7 @@ const ProductDetail = () => {
         </div>
     );
 };
+    
 
-export default ProductDetail;
+export default ProductDetails3;
 

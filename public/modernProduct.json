@@ -1,30 +1,130 @@
 [
+    
     {
-        "_id": 1 ,
-        "name" : "Platinum Numeral" ,
-        "img" : "images2/PlatinumNumeral.jpg" ,
-        "price" : "$3000"
-    } 
+        
+        "name" : "Black Metal" ,
+        "img" : "https://i.ibb.co/S7w66MB/images-3.jpg" ,
+        "discription" : "This is a nice watch and water prove best new collection " ,
+        "price" : 11000
+    }
     ,
+    {
+        
+        "name" : "Black Pitch" ,
+        "img" : "https://i.ibb.co/yYdjcqV/images-11.jpg" ,
+        "discription" : "This is a nice watch and water prove best new collection " ,
+        "price" : 10000
+    }
+    ,
+    {
+        
+        "name" : "Sky Black" ,
+        "img" : "https://i.ibb.co/KqLTyfg/images-14.jpg" ,
+        "discription" : "This is a nice watch and water prove best new collection " ,
+        "price" : 10500
+    }
+    ,
+    {
+        
+        "name" : "Black Sports" ,
+        "img" : "https://i.ibb.co/vhcdDPM/images-16.jpg" ,
+        "discription" : "This is a nice watch and water prove best new collection " ,
+        "price" : 10700
+    }
+    ,
+    {
+        
+        "name" : "Silver Black" ,
+        "img" : "https://i.ibb.co/b2VYD6s/images-22.jpg" ,
+        "discription" : "This is a nice watch and water prove best new collection " ,
+        "price" : 10000
+    }
+    ,
+    {
+        
+        "name" : "Blue Pink Circle" ,
+        "img" : "https://i.ibb.co/gvhmrcz/images-24.jpg" ,
+        "discription" : "This is a nice watch and water prove best new collection " ,
+        "price" : 10500
+    }
+    ,
+    {
 
-    {
-        "_id": 2 ,
-        "name" : "Platinum Classic" ,
-        "img" : "images2/PlatinumClassic.jpg" ,
-        "price" : "$5000"
+        "name" : "Digital Wtach" ,
+        "img" : "https://i.ibb.co/NTDvK0R/images-25.jpg" ,
+        "discription" : "This is a nice watch and water prove best new collection " ,
+        "price" : 8000
     }
     ,
     {
-        "_id": 3 ,
-        "name" : "Golden Automatic" ,
-        "img" : "images2/GoldenAutomatic.jpg" ,
-        "price" : "$2500"
+        
+        "name" : "Marmaid Watch" ,
+        "img" : "https://i.ibb.co/YTWRZJP/images-26.jpg" ,
+        "discription" : "This is a nice watch and water prove best new collection " ,
+        "price" : 10500
     }
     ,
     {
-        "_id": 4 ,
-        "name" : "Analog Automatic" ,
-        "img" : "images2/AnalogAutomatic.jpg" ,
-        "price" : "$1000"
+        
+        "name" : "Digital Black Red Watch" ,
+        "img" : "https://i.ibb.co/wMcgB8d/images-33.jpg" ,
+        "discription" : "This is a nice watch and water prove best new collection " ,
+        "price" : 7000
+    }
+    ,
+    {
+       
+        "name" : "Digital Pink Wtch" ,
+        "img" : "https://i.ibb.co/pnFzh1n/images.jpg" ,
+        "discription" : "This is a nice watch and water prove best new collection " ,
+        "price" : 10000
+    }
+    ,
+    {
+
+        "name" : "Blue Smart Watch" ,
+        "img" : "https://i.ibb.co/tCtv4pB/manifest.jpg" ,
+        "discription" : "This is a nice watch and water prove best new collection " ,
+        "price" : 5000
+    }
+    ,
+    {
+
+        "name" : "Silver Smart Watch" ,
+        "img" : "https://i.ibb.co/Yf39dbK/pexels-javon-swaby-2783873.jpg" ,
+        "discription" : "This is a nice watch and water prove best new collection " ,
+        "price" : 8000
+    }
+    ,
+    {
+        
+        "name" : "Silver blue red" ,
+        "img" : "https://i.ibb.co/f0trgRP/pexels-pixabay-47856.jpg" ,
+        "discription" : "This is a nice watch and water prove best new collection " ,
+        "price" : 15000
+    }
+    ,
+    {
+        
+        "name" : "Black Water Prove" ,
+        "img" : "https://i.ibb.co/cDcnt3B/pexels-thlil-2373730.jpg" ,
+        "discription" : "This is a nice watch and water prove best new collection " ,
+        "price" : 9000
+    }
+    ,
+    {
+        
+        "name" : "pexels-anthony" ,
+        "img" : "https://i.ibb.co/DpJ2r98/pexels-anthony-derosa-236915.jpg" ,
+        "discription" : "This is a nice watch and water prove best new collection " ,
+        "price" : 6000
+    }
+    ,
+    {
+        
+        "name" : "pexels-pixabay" ,
+        "img" : "https://i.ibb.co/YPSwMJ6/pexels-pixabay-364822-2.jpg" ,
+        "discription" : "This is a nice watch and water prove best new collection " ,
+        "price" : 7000
     }
 ]
