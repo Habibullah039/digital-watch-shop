@@ -7,7 +7,7 @@ const Footer = () => {
     const year = toDay.getFullYear();
     return (
         <div>
-            <div style={{ background: `url(${footer})`, backgroundPosition: "center", backgroundSize: "cover" }} className='grid grid-cols-1 lg:grid-cols-3 px-[50px]  gap-10 text-white h-[320px]'>
+            <div style={{ background: `url(${footer})`, backgroundPosition: "center", backgroundSize: "cover" }} className='grid grid-cols-1 lg:grid-cols-3 md:px-[50px] px-[10px]   md:gap-10 text-white md:h-[320px]'>
                 <div className=' pl-[90px] '>
                     <p className='text-3xl font-serif font-normal  mt-[50px] mb-5'>Help</p>
                     <ul className='text-lg'>
@@ -75,7 +75,7 @@ const Footer = () => {
 
             </div>
 
-            <p className='text-center py-5 text-white text-2xl font-semibold bg-[#0E1D55]'> <small>Copyright @ {year}</small> </p>
+            <p className='text-center py-5 text-white text-2xl font-semibold bg-[#0E1D55]'> <small> Copyright @ {year} </small> </p>
         </div>
     );
 };

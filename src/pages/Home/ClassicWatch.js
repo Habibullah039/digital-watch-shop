@@ -14,12 +14,12 @@ const ClassicWatch = ({ classicProduct }) => {
         <section className='mt-[60px]'>
 
             <div>
-                <img src={img} className='h-[340px] w-[250px] text-white' alt={name} />
+                <img src={img} className='md:h-[340px] h-[200px] md:w-[250px] w-[150px] text-white' alt={name} />
             </div>
 
             <div className='text-white'>
 
-                <h3 className='text-2xl text-center font-medium capitalize font-serif'> {name} </h3>
+                <h3 className='md:text-2xl text-lg text-center font-medium capitalize font-serif'> {name} </h3>
                 <div className='flex justify-center'>
                     <StarIcon className="h-6 w-6 text-[yellow]" />
                     <StarIcon className="h-6 w-6 text-[yellow]" />
@@ -33,8 +33,8 @@ const ClassicWatch = ({ classicProduct }) => {
 
             <div className='text-white'>
 
-                <button className='bg-[#4E4E53] uppercase text-md font-semibold block mx-auto px-12 py-4' onClick={() => handleClick(_id)}>Add to cart</button>
-                <div className="divider h-[2px] block mx-auto w-[197px] mt-[-2px] bg-[#FFA07A]"></div>
+                <button className='bg-[#4E4E53] uppercase md:text-md text-sm font-semibold block mx-auto md:px-12 px-6 md:py-4 py-3 ' onClick={() => handleClick(_id)}>Add to cart</button>
+                <div className="divider h-[2px] block mx-auto md:w-[150px] w-[130px] mt-[-2px] bg-[#FFA07A]"></div>
 
             </div>
 

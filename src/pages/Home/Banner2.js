@@ -32,7 +32,7 @@ const Banner2 = () => {
         }
     ] ;
     return (
-        <div className='grid grid-cols-1 lg:grid-cols-3 px-10 gap-8 bg-[#030D1D]'>
+        <div className='grid grid-cols-1 lg:grid-cols-3 px-10 gap-8  bg-[#030D1D]'>
             {
                 banners.map(banner => <Banner2Section 
                     

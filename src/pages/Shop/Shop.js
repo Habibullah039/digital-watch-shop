@@ -26,12 +26,12 @@ const Shop = () => {
         <div className='bg-black pt-[30px] pb-[130px]'>
         
             <div className="tabs justify-center my-[80px] ">
-                <div onClick={() => toggleTab(1)} className={`tab tab-bordered ${state !== 1 ? 'null' : 'tab-active'} text-white text-xl font-serif font-medium`}>Classic</div>
-                <div onClick={() => toggleTab(2)} className={`tab tab-bordered ${state !== 2 ? 'null' : 'tab-active'}  text-white text-xl font-serif font-medium`}>Modern</div>
-                <div onClick={() => toggleTab(3)} className={`tab tab-bordered ${state !== 3 ? 'null' : 'tab-active'}  text-white text-xl font-serif font-medium`}>New Edition</div>
+                <div onClick={() => toggleTab(1)} className={`tab tab-bordered ${state !== 1 ? 'null' : 'tab-active'} text-white md:text-xl text-md font-serif font-medium`}>Classic</div>
+                <div onClick={() => toggleTab(2)} className={`tab tab-bordered ${state !== 2 ? 'null' : 'tab-active'}  text-white md:text-xl text-md font-serif font-medium`}>Modern</div>
+                <div onClick={() => toggleTab(3)} className={`tab tab-bordered ${state !== 3 ? 'null' : 'tab-active'}  text-white md:text-xl text-md font-serif font-medium`}>New Edition</div>
             </div>
             <div className='flex justify-between items-center'>
-                <div className={`tab-active ${state !== 1 ? 'hidden' : 'block'} grid grid-cols-2 lg:grid-cols-4 gap-10  px-[105px]`}>
+                <div className={`tab-active ${state !== 1 ? 'hidden' : 'block'} grid grid-cols-2 lg:grid-cols-4 gap-10 md:px-[105px] px-[20px]`}>
 
                     {
                         classicProducts?.map(classicProduct => <ClassicWatch
@@ -40,7 +40,7 @@ const Shop = () => {
                         ></ClassicWatch>)
                     }
                 </div>
-                <div className={`tab-active ${state !== 2 ? 'hidden' : 'block'} grid grid-cols-2 lg:grid-cols-4 gap-10   px-[105px]`}>
+                <div className={`tab-active ${state !== 2 ? 'hidden' : 'block'} grid grid-cols-2 lg:grid-cols-4 gap-10 md:px-[105px] px-[20px]`}>
 
                     {
                         modernProducts?.map(modernProduct => <ModernWatch
@@ -49,7 +49,7 @@ const Shop = () => {
                         ></ModernWatch>)
                     }
                 </div>
-                <div className={`tab-active ${state !== 3 ? 'hidden' : 'block'} grid grid-cols-2 lg:grid-cols-4 gap-10 px-[105px]`}>
+                <div className={`tab-active ${state !== 3 ? 'hidden' : 'block'} grid grid-cols-2 lg:grid-cols-4 gap-10 md:px-[105px] px-[20px]`}>
 
                     {
                         specialProducts?.map(specialProduct => <SpecialWatch

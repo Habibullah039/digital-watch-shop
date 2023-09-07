@@ -1,6 +1,4 @@
-
 import { Routes, Route } from "react-router-dom";
-import CheckOut from "./pages/CheckOut/CheckOut";
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import RequireAuth from "./pages/Login/RequireAuth";
@@ -11,6 +9,13 @@ import Footer from "./pages/Shared/Footer";
 import Header from "./pages/Shared/Header";
 import Shop from "./pages/Shop/Shop";
 import ProductDetails3 from "./pages/ProductDetail/ProductDetails3";
+import Cart from "./pages/Cart/Cart" ;
+import Payment from "./pages/Cart/Payment" ;
+
+
+
+
+
 
 
 function App() {
@@ -59,11 +64,21 @@ function App() {
 
 
 
-        <Route path="/checkout" element={
+        <Route path="/cart" element={
 
           <RequireAuth>
 
-            <CheckOut />
+            <Cart></Cart>
+          </RequireAuth>
+
+        } />
+
+
+        <Route path="/payment" element={
+
+          <RequireAuth>
+
+            <Payment></Payment>
 
           </RequireAuth>
 

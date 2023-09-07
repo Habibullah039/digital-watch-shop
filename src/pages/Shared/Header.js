@@ -25,7 +25,7 @@ const Header = () => {
                     <ul tabindex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-[#0E1D55] rounded-box w-52">
                         <li className='mx-3  hover:text-yellow-300'><Link to="/">Home</Link></li>
                         <li className='mx-3  hover:text-yellow-300'><Link to='/shop'>Shop</Link></li>
-                        <li className='mx-3  hover:text-yellow-300'><Link to='/checkout'>Check Out</Link></li>
+                        <li className='mx-3  hover:text-yellow-300'><Link to='/cart'>Cart</Link></li>
                         <li className='mx-3  hover:text-yellow-300'><Link to='/contact'>Contact Us</Link></li>
                     </ul>
                 </div>
@@ -37,7 +37,7 @@ const Header = () => {
                 <ul className="menu menu-horizontal text-md font-semibold tracking-widest uppercase px-1">
                     <li className='mx-3  hover:text-yellow-300'><Link to="/">Home</Link></li>
                     <li className='mx-3  hover:text-yellow-300'><Link to='/shop'>Shop</Link></li>
-                    <li className='mx-3  hover:text-yellow-300'><Link to='/checkout'>Check Out</Link></li>
+                    <li className='mx-3  hover:text-yellow-300'><Link to='/cart'>Cart</Link></li>
                     <li className='mx-3  hover:text-yellow-300'><Link to='/contact'>Contact Us</Link></li>
                 </ul>
             </div>

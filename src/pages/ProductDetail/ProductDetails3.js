@@ -45,7 +45,7 @@ const ProductDetails3 = () => {
         }
 
         console.log(order);
-        navigate('/checkout');
+        navigate('/cart');
 
         fetch('http://localhost:5000/order', {
             method: 'POST',
@@ -67,12 +67,12 @@ const ProductDetails3 = () => {
     return (
         <div className='flex'>
 
-            <div className='bg-[#4E4E53] mt-[80px] mx-[60px] mb-[150px]'>
-                <img src={img} className='h-[450px] w-[320px] mb-[-130px]' alt={name} />
+            <div className='bg-[#4E4E53] mt-[80px] md:mx-[60px] mx-[20px] mb-[150px]'>
+                <img src={img} className='md:h-[450px] h-[250px] md:w-[320px] w-[250px] md:mb-[-130px]' alt={name} />
             </div>
 
             <div className='mt-[100px]'>
-                <h1 className='text-3xl font-serif font-bold mb-3'>{name}</h1>
+                <h1 className='md:text-3xl text-lg font-serif font-bold mb-3'>{name}</h1>
                 <p className='font-serif text-md font-semibold'> {discription} </p>
                 <div className='flex my-2'>
                     <StarIcon className="h-5 w-5 text-[#835a0e]" />
@@ -81,10 +81,10 @@ const ProductDetails3 = () => {
                     <StarIcon className="h-5 w-5 text-[#835a0e]" />
                     <StarIcon className="h-5 w-5 text-[#835a0e]" />
                 </div>
-                <p className='text-4xl font-serif  font-bold mb-3'> {price} </p>
+                <p className='md:text-4xl text-lg font-serif  font-bold mb-3'> {price} </p>
 
 
-                <div className='flex items-center text-2xl font-serif font-bold my-2'>
+                <div className='flex items-center md:text-2xl text-lg font-serif font-bold my-2'>
                     <p className='mr-2'>Quantity :</p>
                     <button className='mr-4' onClick={decreaseCount}>-</button>
                     <p className='mr-4'>{count}</p>
@@ -97,29 +97,29 @@ const ProductDetails3 = () => {
                 <form onSubmit={handleOrder}>
 
                     <div className='flex font-serif font-bold'>
-                        <p className='mr-4 text-2xl'>Size :</p>
+                        <p className='mr-4 md:text-2xl text-lg'>Size:</p>
 
                         <div>
                             <input type="radio" name="size" id="S" value="S" checked className="radio radio-warning" />
-                            <label for='S' className='text-2xl mx-2'>S</label>
+                            <label for='S' className='md:text-2xl text-lg md:mx-2 mx-1'>S</label>
                         </div>
                         <div>
                             <input type="radio" name="size" id="M" value="M" className="radio radio-warning" />
-                            <label for='M' className='text-2xl mx-2'>M</label>
+                            <label for='M' className='md:text-2xl text-lg md:mx-2 mx-1'>M</label>
                         </div>
                         <div>
                             <input type="radio" name="size" id="L" value="L" className="radio radio-warning" />
-                            <label for='M' className='text-2xl mx-2'>L</label>
+                            <label for='M' className='md:text-2xl text-lg md:mx-2 mx-1'>L</label>
                         </div>
                         <div>
                             <input type="radio" name="size" id="XL" value="XL" className="radio radio-warning" />
-                            <label for='XL' className='text-2xl mx-2'>XL</label>
+                            <label for='XL' className='md:text-2xl text-lg md:mx-2 mx-1'>XL</label>
                         </div>
                     </div>
 
 
 
-                    <input type="submit" value='Add To Cart' className=' btn text-lg font-serif font-bold bg-pink-800 text-white px-[30px] py-3 my-5' />
+                    <input type="submit" value='Add To Cart' className=' btn text-lg font-serif font-bold bg-pink-800 text-white md:px-[30px] py-3 my-5' />
 
 
                 </form>

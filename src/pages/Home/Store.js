@@ -38,17 +38,17 @@ const Store = () => {
 
     return (
         <div className='bg-black pt-[30px] pb-[130px]'>
-            <h2 className='text-center text-5xl text-white mt-[80px]  font-serif'>Popular In Store</h2>
-            <div className="divider h-1 w-96 mx-auto mt-[-8px] bg-[#FFA07A]"></div>
+            <h2 className='text-center md:text-5xl text-xl text-white mt-[80px]  font-serif'>Popular In Store</h2>
+            <div className="divider h-1 md:w-96 w-32 mx-auto mt-[-8px] bg-[#FFA07A]"></div>
 
 
             <div className="tabs justify-center my-[60px] ">
-                <div onClick={() => toggleTab(1)} className={`tab tab-bordered ${state !== 1 ? 'null' : 'tab-active'} text-white text-xl font-serif font-medium`}>Classic</div>
-                <div onClick={() => toggleTab(2)} className={`tab tab-bordered ${state !== 2 ? 'null' : 'tab-active'}  text-white text-xl font-serif font-medium`}>Modern</div>
-                <div onClick={() => toggleTab(3)} className={`tab tab-bordered ${state !== 3 ? 'null' : 'tab-active'}  text-white text-xl font-serif font-medium`}>New Edition</div>
+                <div onClick={() => toggleTab(1)} className={`tab tab-bordered ${state !== 1 ? 'null' : 'tab-active'} text-white md:text-xl text-md font-serif font-medium`}>Classic</div>
+                <div onClick={() => toggleTab(2)} className={`tab tab-bordered ${state !== 2 ? 'null' : 'tab-active'} text-white md:text-xl text-md font-serif font-medium`}>Modern</div>
+                <div onClick={() => toggleTab(3)} className={`tab tab-bordered ${state !== 3 ? 'null' : 'tab-active'} text-white md:text-xl text-md font-serif font-medium`}>New Edition</div>
             </div>
             <div className='flex justify-between items-center mb-[100px]'>
-                <div className={`tab-active ${state !== 1 ? 'hidden' : 'block'} grid grid-cols-2 lg:grid-cols-4 gap-10 px-[105px]`}>
+                <div className={`tab-active ${state !== 1 ? 'hidden' : 'block'} grid grid-cols-2 lg:grid-cols-4 gap-10 md:px-[105px] px-[20px] `}>
 
                     {
                         classicProducts?.slice(0,4).map(classicProduct => <ClassicWatch
@@ -57,7 +57,7 @@ const Store = () => {
                         ></ClassicWatch>)
                     }
                 </div>
-                <div className={`tab-active ${state !== 2 ? 'hidden' : 'block'} grid grid-cols-2 lg:grid-cols-4 gap-10 px-[105px]`}>
+                <div className={`tab-active ${state !== 2 ? 'hidden' : 'block'} grid grid-cols-2 lg:grid-cols-4 gap-10 md:px-[105px] px-[20px]`}>
 
                     {
                         modernProducts?.slice(0,4).map(modernProduct => <ModernWatch
@@ -66,7 +66,7 @@ const Store = () => {
                         ></ModernWatch>)
                     }
                 </div>
-                <div className={`tab-active ${state !== 3 ? 'hidden' : 'block'} grid grid-cols-2 lg:grid-cols-4 gap-10 px-[105px]`}>
+                <div className={`tab-active ${state !== 3 ? 'hidden' : 'block'} grid grid-cols-2 lg:grid-cols-4 gap-10 md:px-[105px] px-[20px]`}>
 
                     {
                         specialProducts?.slice(0,4).map(specialProduct => <SpecialWatch
