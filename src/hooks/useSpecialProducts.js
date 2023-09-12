@@ -5,7 +5,7 @@ const useSpecialProducts = () => {
     const [specialProducts, setSpecialProducts] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/specialWatch')
+        fetch('https://digital-watch-shopping-server.vercel.app/specialWatch')
             .then(res => res.json())
             .then(data => setSpecialProducts(data))
     }, [])

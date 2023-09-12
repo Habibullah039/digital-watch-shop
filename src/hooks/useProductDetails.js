@@ -5,7 +5,7 @@ const useProductDetails = productId => {
     const [product , setProduct] = useState({});
 
     useEffect(()=> {
-        fetch(`http://localhost:5000/classicWatch/${productId}`)
+        fetch(`https://digital-watch-shopping-server.vercel.app/classicWatch/${productId}`)
         .then(res => res.json())
         .then(data => setProduct(data) )
     } , [productId])

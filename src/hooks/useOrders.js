@@ -19,7 +19,7 @@ const useOrders = () => {
             const email = user.email;
 
             try {
-                const { data } = await axios.get(`http://localhost:5000/order?email=${email}`, {
+                const { data } = await axios.get(`https://digital-watch-shopping-server.vercel.app/order?email=${email}`, {
 
                     headers: {
                         authorization: `Bearer ${localStorage.getItem('token')}`

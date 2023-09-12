@@ -47,7 +47,7 @@ const ProductDetails3 = () => {
         console.log(order);
         navigate('/cart');
 
-        fetch('http://localhost:5000/order', {
+        fetch('https://digital-watch-shopping-server.vercel.app/order', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

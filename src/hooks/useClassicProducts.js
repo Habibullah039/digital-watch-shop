@@ -5,7 +5,7 @@ const useClassicProducts = () => {
     const [classicProducts, setClassicProducts] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/classicWatch')
+        fetch('https://digital-watch-shopping-server.vercel.app/classicWatch')
             .then(res => res.json())
             .then(data => setClassicProducts(data))
     }, [])
