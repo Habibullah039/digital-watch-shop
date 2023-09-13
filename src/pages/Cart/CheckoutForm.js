@@ -17,7 +17,7 @@ const CheckoutForm = ({ price }) => {
 
     useEffect(() => {
 
-        fetch('https://digital-watch-shopping-server.vercel.app/create-payment-intent', {
+        fetch('https://digital-watch-shopping-server-iota.vercel.app/create-payment-intent', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json' ,
