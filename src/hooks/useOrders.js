@@ -19,7 +19,7 @@ const useOrders = () => {
             const email = user.email;
 
             try {
-                const { data } = await axios.get(`https://digital-watch-shopping-server-iota.vercel.app/order?email=${email}`, {
+                const { data } = await axios.get(`https://digital-watch-shopping-server-taanjilahmedtan039-gmailcom.vercel.app/order?email=${email}`, {
 
                     headers: {
                         authorization: `Bearer ${localStorage.getItem('token')}`

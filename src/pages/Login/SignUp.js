@@ -64,7 +64,7 @@ const SignUp = () => {
         
         
 
-        fetch('https://digital-watch-shopping-server-iota.vercel.app/signup', {
+        fetch('https://digital-watch-shopping-server-taanjilahmedtan039-gmailcom.vercel.app/signup', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
