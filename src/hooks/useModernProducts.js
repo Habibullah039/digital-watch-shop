@@ -5,7 +5,7 @@ const useModernProducts = () => {
     const [modernProducts, setModernProducts] = useState([]);
 
     useEffect(() => {
-        fetch('https://digital-watch-shopping-server-taanjilahmedtan039-gmailcom.vercel.app/modernWatch')
+        fetch('https://digital-watch-shopping-server-iota.vercel.app/modernWatch')
             .then(res => res.json())
             .then(data => setModernProducts(data))
     }, [])

@@ -46,7 +46,7 @@ const ProductDetail = () => {
         
         navigate('/cart');
 
-        fetch('https://digital-watch-shopping-server-taanjilahmedtan039-gmailcom.vercel.app/order', {
+        fetch('https://digital-watch-shopping-server-iota.vercel.app/order', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

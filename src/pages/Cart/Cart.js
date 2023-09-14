@@ -11,7 +11,7 @@ const Cart = () => {
         const proceed = window.confirm('are you sure you want to delete');
 
         if (proceed) {
-            fetch(`https://digital-watch-shopping-server-taanjilahmedtan039-gmailcom.vercel.app/order/${id}`, {
+            fetch(`https://digital-watch-shopping-server-iota.vercel.app/order/${id}`, {
                 method: 'DELETE'
             })
 
