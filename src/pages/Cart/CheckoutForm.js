@@ -6,39 +6,45 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 
 
 
-const CheckoutForm = ({ price }) => {
+const CheckoutForm = ({ price, orders }) => {
 
     const stripe = useStripe();
     const elements = useElements();
     const [cardError, setCardError] = useState('');
     const [clientSecret, setClientSecret] = useState('');
     const [user] = useAuthState(auth);
+    const [processing, setProcessing] = useState(false);
+    const [transactionId, setTransactionId] = useState('');
 
 
     useEffect(() => {
 
-        fetch('https://digital-watch-shopping-server-iota.vercel.app/create-payment-intent', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json' ,
-                authorization: `Bearer ${localStorage.getItem('token')}`
-                
-            },
+        if (price > 0) {
 
-            body: JSON.stringify(price)
-        })
+            fetch('https://digital-watch-shopping-server-iota.vercel.app/create-payment-intent', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'authorization': `Bearer ${localStorage.getItem('token')}`
 
-        .then(res => res.json())  
+                },
 
-        .then(data => {
+                body: JSON.stringify({ price })
+            })
 
-            console.log(data.clientSecret);
-            
+                .then(res => res.json())
 
-            if(data?.clientSecret) {
-                setClientSecret(data.clientSecret);
-            }
-        })
+                .then(data => {
+
+                    console.log(data.clientSecret);
+
+
+                    if (data?.clientSecret) {
+                        setClientSecret(data.clientSecret);
+                    }
+                })
+
+        }
 
     }, [price])
 
@@ -73,39 +79,99 @@ const CheckoutForm = ({ price }) => {
 
         else {
 
-            console.log('PaymentMethod', paymentMethod);
+            console.log('paymentMethod', paymentMethod);
 
             setCardError(' ');
 
         }
 
-        const {paymentIntent  , error : confirmError} = await stripe.confirmCardPayment(clientSecret, {
+        setProcessing(true)
 
-                payment_method: {
-                    card: card ,
-                    billing_details: {
+        const { paymentIntent, error: confirmError } = await stripe.confirmCardPayment(clientSecret, {
 
-                        email : user?.email || 'unknown' 
-                        
-                    },
+            payment_method: {
+                card: card,
+                billing_details: {
+
+                    email: user?.email || 'unknown',
+                    name: user?.displayName || 'unknown'
+
                 },
-            }
+            },
+        }
         )
 
         if (confirmError) {
 
             console.log(confirmError);
             setCardError(confirmError.message)
-            
+
 
         }
 
         else {
             setCardError('')
+            console.log(paymentIntent);
         }
 
-        console.log(paymentIntent);
-        
+        setProcessing(false)
+
+        if (paymentIntent.status === 'succeeded') {
+
+
+            setTransactionId(paymentIntent.id);
+
+            const payment = {
+                email: user?.email,
+                transactionId: paymentIntent.id,
+                price,
+                quantity: orders.length,
+                items: orders.map(item => item._id),
+                ordersId: orders.map(item => item.productId),
+                itemsName: orders.map(item => item.product),
+                itemSize: orders.map(item => item.size),
+                date: new Date()
+
+            }
+
+
+
+            fetch('http://localhost:5000/payments', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+
+                },
+
+                body: JSON.stringify(payment)
+            })
+
+                .then(res => res.json())
+
+                .then(data => {
+
+
+
+                    if (data.insertResult.insertedId) {
+
+                        console.log(data.insertResult.insertedId);
+
+                    }
+
+                })
+
+            elements.getElement(CardElement).clear();
+
+
+
+        }
+
+
+
+
+
+
+
 
     }
 
@@ -113,7 +179,7 @@ const CheckoutForm = ({ price }) => {
     return (
         <>
 
-            <form className='w-1/3 h-[500px] mt-5 ml-8' onSubmit={handleSubmit}>
+            <form className='h-[200px] md:w-1/3 mt-[10px] ' onSubmit={handleSubmit}>
                 <CardElement
                     options={{
                         style: {
@@ -131,7 +197,7 @@ const CheckoutForm = ({ price }) => {
                     }}
                 />
 
-                <button className='btn btn-primary btn-sm mt-5' type="submit" disabled={!stripe || !clientSecret}>
+                <button className='btn btn-primary btn-sm mt-[40px]' type="submit" disabled={!stripe || !clientSecret || processing}>
                     Pay
                 </button>
 
@@ -139,6 +205,13 @@ const CheckoutForm = ({ price }) => {
             </form>
 
             {cardError && <p className='text-red-600 ml-8' >{cardError}</p>}
+            {transactionId && <p className='text-green-600 font-bold md:text-md md:w-1/3 font-serif md:mb-[10px] mb-[90px] ml-8' >Congratulation!! Your Payment is Successful Please Store Your TransactionId : {transactionId}</p>}
+
+
+
+            
+
+
 
         </>
     );

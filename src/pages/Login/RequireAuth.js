@@ -19,7 +19,7 @@ const RequireAuth = ({children}) => {
     if (loading) {
 
 
-        return <button class="btn loading"> Loading</button>
+        return <button className="btn loading"> Loading</button>
 
     }
 

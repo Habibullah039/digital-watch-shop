@@ -39,7 +39,7 @@ const Store = () => {
     return (
         <div className='bg-black pt-[30px] pb-[130px]'>
             <h2 className='text-center md:text-5xl text-xl text-white mt-[80px]  font-serif'>Popular In Store</h2>
-            <div className="divider h-1 md:w-96 w-32 mx-auto mt-[-8px] bg-[#FFA07A]"></div>
+            <div className="divider h-1 md:w-96 w-44 mx-auto mt-[-8px] bg-[#FFA07A]"></div>
 
 
             <div className="tabs justify-center my-[60px] ">

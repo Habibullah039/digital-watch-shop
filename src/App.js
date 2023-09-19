@@ -11,6 +11,8 @@ import Shop from "./pages/Shop/Shop";
 import ProductDetails3 from "./pages/ProductDetail/ProductDetails3";
 import Cart from "./pages/Cart/Cart" ;
 import Payment from "./pages/Cart/Payment" ;
+import NotFound from "./pages/Shared/NotFound";
+import Contact from "./pages/Contact/Contact";
 
 
 
@@ -22,9 +24,13 @@ function App() {
   return (
     <div>
       <Header></Header>
+      
       <Routes>
+
         <Route path="/" element={<Home />} />
         <Route path="/shop" element={<Shop />} />
+        <Route path="/contact" element={<Contact />} />
+
 
         <Route path="/product/:productId" element={
 
@@ -85,6 +91,8 @@ function App() {
         } />
         <Route path="/login" element={<Login />} />
         <Route path="/sign-up" element={<SignUp />} />
+
+        <Route path="*" element={<NotFound></NotFound>}></Route>
 
 
       </Routes>

@@ -36,7 +36,7 @@ const SignUp = () => {
       if (loading || updating) {
     
 
-        return <button class="btn loading"> Loading</button>
+        return <button className="btn loading"> Loading</button>
 
       }
 
@@ -88,7 +88,7 @@ const SignUp = () => {
             <div className="card w-96 my-5  bg-[#511849]">
 
                 <div className="card-body">
-                    <h2 class=" text-center font-bold text-white  text-2xl">Sign Up</h2>
+                    <h2 className=" text-center font-bold text-white  text-2xl">Sign Up</h2>
 
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="form-control w-full max-w-xs">
@@ -252,7 +252,7 @@ const SignUp = () => {
 
                         {signInError}
                         
-                        <input class="bg-[#C70039] mt-3 px-16 py-3 font-bold font-sans rounded block mx-auto text-lg text-white cursor-pointer" type="submit" value='Submit' />
+                        <input className="bg-[#C70039] mt-3 px-16 py-3 font-bold font-sans rounded block mx-auto text-lg text-white cursor-pointer" type="submit" value='Submit' />
 
 
                     </form>

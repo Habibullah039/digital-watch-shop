@@ -9,7 +9,7 @@ const Time = () => {
     const [minutes, setMinutes] =useState(0);
     const [seconds, setSeconds] =useState(0);
   
-    const deadline = "May,26 , 2023";
+    const deadline = "November,26 , 2023";
   
     const getTime = () => {
       const time = Date.parse(deadline) - Date.now();    
@@ -30,7 +30,7 @@ const Time = () => {
     <div style={{ background: `url(${time})`, backgroundPosition: "center", backgroundSize: "cover" , backgroundAttachment:"fixed" }} className='md:h-[500px] h-[900px]'>
 
         <h2 className='text-center md:text-4xl text-lg text-white capitalize font-serif font-normal pt-[100px]'>new arrival comming soon</h2>
-        <div className="divider h-[4px] block mx-auto md:w-2/5 w-3/4 mt-[-2px] bg-[#FFA07A]"></div>
+        <div className="divider h-[4px] block mx-auto md:w-2/5 w-3/4 mt-[-6px] bg-[#FFA07A]"></div>
 
         <div className="md:flex justify-center pb-[200px] gap-5 mx-[40px]  mt-[60px] ">
 
