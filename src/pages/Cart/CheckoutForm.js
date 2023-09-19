@@ -136,7 +136,7 @@ const CheckoutForm = ({ price, orders }) => {
 
 
 
-            fetch('http://localhost:5000/payments', {
+            fetch('https://digital-watch-shopping-server-iota.vercel.app/payments', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
