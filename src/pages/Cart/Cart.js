@@ -38,7 +38,7 @@ const Cart = () => {
 
                     {
 
-                        orders.map(order => <div className='md:flex justify-between items-center text-white ml-[80px] mb-[30px]'>
+                        orders.map(order => <div className='flex justify-between items-center text-white px-[20px] mb-[30px]'>
 
 
                             <div>

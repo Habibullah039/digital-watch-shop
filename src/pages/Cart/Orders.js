@@ -24,7 +24,7 @@ const Orders = (props) => {
 
 
     return (
-        <div className='w-[400px] font-serif text-white ml-[30px] font-bold'>
+        <div className='md:w-[400px] w-[300px]  font-serif text-white ml-[30px] font-bold'>
             <h4 className=' text-3xl text-[orange]  mb-[40px]'>Order Summary</h4>
             <p className=' text-xl mb-[10px] capitalize'>Your Selected Products : {quantity} Item</p>
             <p className=' text-xl mb-[10px] capitalize'>Products Price : {price}.00 tk</p>

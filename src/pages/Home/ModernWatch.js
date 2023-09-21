@@ -34,7 +34,7 @@ const ModernWatch = ({ modernProduct }) => {
             <div className='text-white'>
 
                 <button className='bg-[#4E4E53] uppercase md:text-md text-sm font-semibold block mx-auto md:px-12 px-6 md:py-4 py-3' onClick={() => handleClick(_id)}>Add to cart</button>
-                <div className="divider h-[2px] block mx-auto md:w-[185px] w-[137px] mt-[-2px] bg-[#FFA07A]"></div>
+                <div className="divider h-[2px] block mx-auto md:w-[185px] w-[136px] mt-[-2px] bg-[#FFA07A]"></div>
 
             </div>
 
